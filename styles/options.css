@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(43, 43, 43);
+    font-family: monospace;
+    color: white;
+}
+
+#container {
+    text-align: center;
+    width: 60%;
+
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+label {
+    font-size: 1.2rem;
+}
+
+input[type="file"],
+input[type="color"] {
+    color: transparent;
+    z-index: -1;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 0.1px;
+    height: 0.1px;
+} 
+
+input[type="checkbox"] {
+    margin-top: 10px;
+    width: 13px;
+    height: 13px;
+}
+
+#bgimg:hover, #bgcolor:hover, #fontcolor:hover, #strokecolor:hover{
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+label#enablebgimg {
+    font-size: 15px;
+}
+
+input#chkEnableImg {
+    width: 10px;
+    height: 10px;
+} 
+
+#chkEnableImg:hover, #chkEnableStroke:hover {
+    cursor: pointer;
+}

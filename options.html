@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/options.css">
+    <title>options</title>
+</head>
+<body>
+    <div id="container">
+        <h1>New Tab Options</h1>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>New Tab Options</title>
-    </head>
+        <div>
+            <label id="bgimg" for="background-image">upload background image</label>
+            <input type="file" id="background-image" accept="image/*">
+        </div>
 
-    <body>
-        <h1>Customize New Tab</h1>
-        <form id="optionsForm">
-            <label for="bgImageFile">Upload Background Image:</label>
-            <input type="file" id="bgImageFile" name="bgImageFile" accept="image/*"><br><br>
+        <div>
+            <input id="chkEnableImg" type="checkbox" id="enable-image">
+            <label id="enablebgimg" for="enable-image">enable image background</label>
+        </div> <br><br><br>
 
-            <label for="fontColor">Font Color:</label>
-            <input type="color" id="fontColor" name="fontColor"><br><br>
+        <div>
+            <label id="bgcolor" for="background-color">background colour</label>
+            <input type="color" id="background-color">
+        </div><br><br>
 
-            <label for="borderColor">Border Color:</label>
-            <input type="color" id="borderColor" name="borderColor"><br><br>
+        <div>
+            <label id="fontcolor" for="font-color">font colour</label>
+            <input type="color" id="font-color">
+        </div> <br><br><br>
 
-            <input type="submit" value="Save">        
-        </form>
+        <div>
+            <input id="chkEnableStroke" type="checkbox" id="enable-stroke">
+            <label for="enable-stroke">enable text stroke</label><br>
+            <label id="strokecolor" for="stroke-color">stroke color</label>
+            <input type="color" id="stroke-color" enabled>
+        </div>
 
-        <script src="options.js"></script>
-    </body>
-    
+        <script src="js/options.js"></script>
+    </div>
+</body>
 </html>
