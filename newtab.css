@@ -18,7 +18,7 @@ body {
 
 #container {
     text-align: center;
-    background-color: rgba(0,0,0,0.3);
+    /* background-color: rgba(0,0,0,0.3); */
     border-radius: 10px;
 }
 
@@ -26,10 +26,12 @@ body {
     font-size: 120px;
     font-weight: bold;
     margin: 0px 10px 0px 10px;
+    text-shadow: 0px 3px 4px black;
 }
 
 #date {
     font-size: 50px;
     font-weight: bold;
     margin: 0px 10px 10px 10px;
+    text-shadow: 0px 3px 4px black;
 }
