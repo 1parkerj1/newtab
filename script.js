@@ -8,7 +8,7 @@ function updateTime() {
 
 // Update time every second
 setInterval(updateTime, 1000);
-updateTime();
+updateTime(); // Initial call to set the time immediately
 
 // Load user settings from Chrome storage
 chrome.storage.sync.get(['bgImage', 'fontColor', 'borderColor'], function(result) {
