@@ -1,0 +1,35 @@
+body {
+    background-color: rgb(31, 31, 31);
+    color: white;
+    font-family: monospace;
+    background-image: url('sweetgeetar.gif');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 0;
+    height: 100vh;
+}
+
+#container {
+    text-align: center;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+#clock {
+    font-size: 120px;
+    font-weight: bold;
+    margin: 0px 10px 0px 10px;
+}
+
+#date {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0px 10px 10px 10px;
+}
