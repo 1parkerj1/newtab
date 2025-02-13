@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "New Tab",
+    "version": "1.0",
+    "description": "new tab page",
+
+    "chrome_url_overrides": {
+        "newtab": "newtab.html"
+    },
+
+    "permissions": [
+        "storage" 
+    ],
+
+    "host_permissions": [
+        "https://api.openweathermap.org/*"
+    ],
+
+    "icons": {
+        "128": "icon.png"
+    }
+}
