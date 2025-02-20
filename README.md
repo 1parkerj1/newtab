@@ -17,5 +17,5 @@ https://home.openweathermap.org/users/sign_up
 
 - click on `my account` -> `my api keys`
 - then enter in a name for your api key in the 'create key' box and then click generate
-- copy the api key and add it to line 31 in `newtab.js` replacing 'YOURAPIKEY'
+- copy the api key and add it to line 36 in `newtab.js` replacing 'YOURAPIKEY'
 - save the file and you should now see the tempature of your area in the top right of your new tab :)
