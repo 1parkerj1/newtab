@@ -33,7 +33,7 @@ function getLocationAndFetchWeather(apiKey) {
 }
 
 async function initialize() {
-    const apiKey = ""; // Your OpenWeather API key
+    const apiKey = "YOURAPIKEY"; // Your OpenWeather API key
     updateClock();
     updateDate();
     backgroundUploader();
