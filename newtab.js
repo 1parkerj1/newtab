@@ -43,7 +43,7 @@ function getStoredApiKey() {
 function saveApiKey(apiKey) {
     chrome.storage.local.set({ weatherApiKey: apiKey }, () => {
         console.log("API key saved.");
-        initialize(); // Reload with new key
+        initialize();
     });
 }
 
@@ -52,11 +52,9 @@ async function initialize() {
     const weatherValue = document.getElementById("weather-value");
     const apiKeyPopup = document.getElementById("api-key-popup");
 
-    // Always show the weather value element and hide popup initially
     weatherValue.style.display = "block";
     apiKeyPopup.style.display = "none";
 
-    // Initialize clock and date regardless of API key
     updateClock();
     updateDate();
     backgroundUploader();
@@ -65,10 +63,8 @@ async function initialize() {
     setInterval(updateDate, 1000 * 60 * 60 * 24);
 
     if (apiKey) {
-        // If we have an API key, fetch weather
         getLocationAndFetchWeather(apiKey);
     } else {
-        // If no API key, show "--"
         weatherValue.textContent = "--";
     }
 }
@@ -128,15 +124,12 @@ function showCustomConfirm(message, yesText = "Yes", noText = "Cancel") {
         const confirmYes = document.getElementById("confirm-yes");
         const confirmNo = document.getElementById("confirm-no");
         
-        // Set custom text
         confirmMessage.textContent = message;
         confirmYes.textContent = yesText;
         confirmNo.textContent = noText;
         
-        // Show popup
         confirmPopup.style.display = "flex";
         
-        // Handle button clicks
         const handleYes = () => {
             confirmPopup.style.display = "none";
             cleanup();
@@ -159,19 +152,16 @@ function showCustomConfirm(message, yesText = "Yes", noText = "Cancel") {
     });
 }
 
-// Handle clicks on the weather area
 document.getElementById("weather").addEventListener("click", async (e) => {
     const apiKey = await getStoredApiKey();
     const apiKeyPopup = document.getElementById("api-key-popup");
 
     if (!apiKey) {
-        // Show popup to enter API key
         apiKeyPopup.style.display = "flex";
         const apiKeyField = document.getElementById("api-key-field");
         apiKeyField.value = "";
         apiKeyField.focus();
     } else {
-        // Use custom confirm dialog
         const confirmRemoval = await showCustomConfirm(
             "Delete Current API Key?", 
             "Remove Key", 
@@ -188,30 +178,24 @@ document.getElementById("weather").addEventListener("click", async (e) => {
     }
 });
 
-// Handle saving of API key from the popup
 document.getElementById("save-api-key").addEventListener("click", (e) => {
-    e.stopPropagation(); // Prevent triggering #weather click
+    e.stopPropagation();
     const key = document.getElementById("api-key-field").value.trim();
     if (key) {
-        // Hide popup immediately
         document.getElementById("api-key-popup").style.display = "none";
-        // Show loading state
         document.getElementById("weather-value").textContent = "Loading...";
-        // Save the key
         saveApiKey(key);
     } else {
         alert("Please enter a valid API key.");
     }
 });
 
-// Handle Enter key in the API key input field
 document.getElementById("api-key-field").addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
         document.getElementById("save-api-key").click();
     }
 });
 
-// Handle clicking outside popup to close it
 document.addEventListener("click", (e) => {
     const popup = document.getElementById("api-key-popup");
     const weather = document.getElementById("weather");
@@ -221,7 +205,6 @@ document.addEventListener("click", (e) => {
     }
 });
 
-// Prevent any clicks inside the popup content from bubbling up
 document.getElementById("api-key-popup").addEventListener("click", (e) => {
     e.stopPropagation();
 });
