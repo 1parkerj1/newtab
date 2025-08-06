@@ -13,7 +13,27 @@
         <span>
             <div id="clock"></div>
             <div id="date"></div>
-            <div id="weather"></div>
+            <div id="weather">
+                <div id="weather-value">--</div>
+            </div>
+
+            <div id="api-key-popup" style="display: none;">
+                <div id="popup-content">
+                    <input type="text" id="api-key-field" placeholder="Enter API key">
+                    <button id="save-api-key">Save</button>
+                </div>
+            </div>
+
+            <div id="confirm-popup" style="display: none;">
+                <div id="confirm-content">
+                    <div id="confirm-message">Do you want to remove your saved API key?</div>
+                    <div id="confirm-buttons">
+                        <button id="confirm-yes">Yes, Remove</button>
+                        <button id="confirm-no">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
         </span>
     </div>
 

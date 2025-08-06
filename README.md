@@ -8,14 +8,14 @@ https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world
 - select this folder
 
 
-
-### to change the background
-- click the plus (+) button on the bottom right to upload your own image or gif :)
-
 ### register to openweathermap to get your free api key here:
 https://home.openweathermap.org/users/sign_up
 
 - click on `my account` -> `my api keys`
 - then enter in a name for your api key in the 'create key' box and then click generate
-- copy the api key and add it to line 31 in `newtab.js` replacing 'YOURAPIKEY'
-- save the file and you should now see the tempature of your area in the top right of your new tab :)
+- click on the "--" in the top right of the new tab page and fill in your api key
+- after pressing "save" the tempature should show in the top right of the screen :)
+
+
+### to change the background
+- click the plus (+) button on the bottom right to upload your own image or gif :)
